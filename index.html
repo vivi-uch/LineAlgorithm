@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Drawing Algorithm</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Line Drawing Algorithm!!</h1>
+
+      <label>Starting Coordinates:</label><br /><br />
+      <div>
+        <input type="number" id="x1" placeholder="X1" />
+        <input type="number" id="y1" placeholder="Y1" />
+      </div>
+
+      <label>Ending Coordinates:</label><br /><br />
+      <div>
+        <input type="number" id="x2" placeholder="X2" />
+        <input type="number" id="y2" placeholder="Y2" />
+      </div>
+
+      <br />
+      <button onclick="calculate('DDA')">DDA</button>
+
+      <button onclick="calculate('Bresenham')">Bresenham</button>
+
+      <button onclick="calculate('MidPoint')">Mid-Point</button>
+
+      <button onclick="calculate('')" class="close">❌</button>
+      <br /><br />
+
+      <table id="resultTable">
+        <thead id="theadDDA" style="display: none">
+          <tr>
+            <th>Xp</th>
+            <th>Yp</th>
+            <th>X<sub>p+1</sub></th>
+            <th>Y<sub>p+1</sub></th>
+            <th>Round(X<sub>p+1</sub>, Y<sub>p+1</sub>)</th>
+          </tr>
+        </thead>
+        <thead id="theadBresenham" style="display: none">
+          <tr>
+            <th>P<sub>k</sub></th>
+            <th>P<sub>k+1</sub></th>
+            <th>X<sub>k+1</sub></th>
+            <th>Y<sub>k+1</sub></th>
+            <th>Round(X<sub>k+1</sub>, Y<sub>k+1</sub>)</th>
+          </tr>
+        </thead>
+        <thead id="theadMidpoint" style="display: none">
+          <tr>
+            <th>D<sub>ini</sub></th>
+            <th>D<sub>new</sub></th>
+            <th>X<sub>k+1</sub></th>
+            <th>Y<sub>k+1</sub></th>
+            <th>Round(X<sub>k+1</sub>, Y<sub>k+1</sub>)</th>
+          </tr>
+        </thead>
+
+        <tbody id="resultBody"></tbody>
+      </table>
+    </div>
+    <p>@ Vivian Okonkwo</p>
+
+    <script src="index.js"></script>
+  </body>
+</html>
